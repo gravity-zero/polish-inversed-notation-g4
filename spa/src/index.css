@@ -1,0 +1,45 @@
+#root {
+  padding: 1rem;
+}
+
+.full-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.h-centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.v-centered {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hv-centered,
+.vh-centered {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.standard-margin {
+  margin: 0.5rem;
+}

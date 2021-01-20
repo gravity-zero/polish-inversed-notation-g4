@@ -1,0 +1,17 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome features",
+    "format": "prettier --write '**/*.{ts,tsx}'"
+  },
+  "author": "Mathieu Eveillard",
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^2.2.1",
+    "testcafe": "^1.10.1",
+    "typescript": "^4.1.3"
+  }
+}
