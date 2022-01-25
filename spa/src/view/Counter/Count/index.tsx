@@ -4,7 +4,7 @@ import { selectCount } from "../../../storage/counterSlice";
 
 export interface Props {}
 
-export const Count: React.FunctionComponent<Props> = () => {
+const Component: React.FunctionComponent<Props> = () => {
   const count = useSelector(selectCount);
 
   return (
@@ -13,3 +13,5 @@ export const Count: React.FunctionComponent<Props> = () => {
     </span>
   );
 };
+
+export default Component;

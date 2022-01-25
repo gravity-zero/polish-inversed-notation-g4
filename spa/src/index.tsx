@@ -7,7 +7,6 @@ import * as serviceWorker from "./serviceWorker";
 import Application from "./view/Application";
 import Counter from "./view/Counter";
 import Error404 from "./view/Error404";
-import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -9,7 +9,7 @@ const DEFAULT_AMOUNT = 2;
 
 export interface Props {}
 
-export const AdditionalControls: React.FunctionComponent<Props> = () => {
+const Component: React.FunctionComponent<Props> = () => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState<number>(DEFAULT_AMOUNT);
 
@@ -49,3 +49,5 @@ export const AdditionalControls: React.FunctionComponent<Props> = () => {
     </div>
   );
 };
+
+export default Component;

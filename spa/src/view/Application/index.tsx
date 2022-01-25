@@ -2,6 +2,8 @@ import React from "react";
 
 export interface Props {}
 
-export const Application: React.FunctionComponent<Props> = () => {
+const Component: React.FunctionComponent<Props> = () => {
   return <div>This is your app!</div>;
 };
+
+export default Component;

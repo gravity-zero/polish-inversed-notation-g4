@@ -4,7 +4,7 @@ import { decrement, increment } from "../../../storage/counterSlice";
 
 export interface Props {}
 
-export const Controls: React.FunctionComponent<Props> = ({ children }) => {
+const Component: React.FunctionComponent<Props> = ({ children }) => {
   const dispatch = useDispatch();
 
   function minus(): void {
@@ -44,3 +44,5 @@ export const Controls: React.FunctionComponent<Props> = ({ children }) => {
     </div>
   );
 };
+
+export default Component;

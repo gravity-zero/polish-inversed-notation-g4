@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome features",
+    "test": "cypress open",
     "format": "prettier --write '**/*.{ts,tsx}'"
   },
   "author": "Mathieu Eveillard",
   "license": "MIT",
   "dependencies": {
-    "prettier": "^2.2.1",
-    "testcafe": "^1.10.1",
-    "typescript": "^4.1.3"
+    "cypress": "^9.3.1",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5"
   }
 }

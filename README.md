@@ -6,7 +6,7 @@ This project uses the followings:
 
 - API: [Express](https://expressjs.com/)
 - SPA: [React, TypeScript and Redux](https://github.com/reduxjs/cra-template-redux-typescript) + [Bulma](https://bulma.io/documentation/) & [Font Awesome](https://fontawesome.com/)
-- e2e: [TestCafé](https://devexpress.github.io/testcafe/)
+- e2e: [Cypress](https://www.cypress.io/)
 
 ## Installation
 
