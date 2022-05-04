@@ -38,7 +38,6 @@ export function resolveReversePolishExpression(
   expression: string
 ): number | Error {
   const formatedExp = parseExpression(expression);
-
   return recursiveCalcul(formatedExp);
 }
 
@@ -86,6 +85,7 @@ function switchNegateToNegativeNumber(
   array: (string | number)[]
 ): (string | number)[] {
   // return array ET negateIndexes
+
   const negateIndexes: number[] = [];
 
   const parsedExpression = array?.map((element, i) => {
