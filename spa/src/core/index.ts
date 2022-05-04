@@ -3,11 +3,8 @@ import { isNumber } from "lodash";
 type Operator = "*" | "/" | "+" | "-";
 const operators = ["*", "/", "+", "-", "NEGATE"];
 
-export function resolveReversePolishExpression(
-  expression: string
-): Number | null {
+export function resolveReversePolishExpression(expression: string): Number | null {
   const formatedExp = parseExpression(expression);
-
   return recursiveCalcul(formatedExp);
 }
 
@@ -49,7 +46,6 @@ function parseOperandsToNumber(array: string[]): (string | number)[]  {
 }
 
 function switchNegateToNegativeNumber(array: (string | number)[]): (string | number)[] {
-// return array ET negateIndexes
   const negateIndexes: number[] = [];
 
   const parsedExpression = array?.map((element, i) => {
@@ -81,12 +77,12 @@ function recursiveCalcul(formatedExp: (number | string)[] ): number | null {
       (el) => typeof el === "string" && operators?.includes(el)
     );
   
-    const number1 = array[firstOperatorIndex - 2];
-    const number2 = array[firstOperatorIndex - 1];
+    const firstOperand = array[firstOperatorIndex - 2];
+    const secondOperand = array[firstOperatorIndex - 1];
     const operator = array[firstOperatorIndex];
   
-    if (isNumber(number1) && isNumber(number2) && typeof operator === "string") {
-      let result = calculate(number1, number2, operator);
+    if (isNumber(firstOperand) && isNumber(secondOperand) && typeof operator === "string") {
+      let result = calculate(firstOperand, secondOperand, operator);
   
       if(isNumber(result)) {
         array.splice(firstOperatorIndex - 2, 2)
