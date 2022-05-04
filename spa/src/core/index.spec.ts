@@ -65,6 +65,96 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
+  it("Complexe addition", function () {
+    //GIVEN
+    const expression = "10 5 + 5 +";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+
+    //THEN
+    const expected = 20;
+
+    expect(actual).toEqual(expected);
+  });
+  it("Complexe addition", function () {
+    //GIVEN
+    const expression = "5 10 5 + +";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+    console.log(actual);
+    
+    //THEN
+    const expected = 20;
+
+    expect(actual).toEqual(expected);
+  });
+  it("Complexe multiplication and addition", function () {
+    //GIVEN
+    const expression = "15 10 * 5 +";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+    console.log(actual);
+    
+    //THEN
+    const expected = 155;
+
+    expect(actual).toEqual(expected);
+  });
+  it("Complexe multiplication and addition", function () {
+    //GIVEN
+    const expression = "5 10 15 * +";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+    console.log(actual);
+    
+    //THEN
+    const expected = 155;
+
+    expect(actual).toEqual(expected);
+  });
+  it("Complexe multiplication and division", function () {
+    //GIVEN
+    const expression = "10 2 / 11 *";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+    console.log(actual);
+    
+    //THEN
+    const expected = 55;
+
+    expect(actual).toEqual(expected);
+  });
+  it("Complexe multiplication and division", function () {
+    //GIVEN
+    const expression = "11 10 2 / *";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+    console.log(actual);
+    
+    //THEN
+    const expected = 55;
+
+    expect(actual).toEqual(expected);
+  });
+  it("Complexe with NEGATE", function () {
+    //GIVEN
+    const expression = "11 10 NEGATE 2 / *";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+    console.log(actual);
+    
+    //THEN
+    const expected = -55;
+
+    expect(actual).toEqual(expected);
+  });
 });
 
 describe("utils", function () {
@@ -118,6 +208,20 @@ describe("utils", function () {
 
     //THEN
     const expected = [1, -2, "+"];
+
+    expect(actual).toEqual(expected);
+  });
+  it("Transform expression in exploitable array", function () {
+    //GIVEN
+    const expression = "1 + 4 NEGATE - 6 NEGATE +";
+
+    //WHEN
+    const actual = parseExpression(expression);
+    console.log(actual);
+    
+
+    //THEN
+    const expected = [1, "+", -4, "-", -6, "+"];
 
     expect(actual).toEqual(expected);
   });
