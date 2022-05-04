@@ -5,7 +5,7 @@ import {
 } from "./index";
 
 describe("Calculate / Main test", function () {
-  it("Simple addition", function () {
+  it("Simple addition:  1 2 + = 3", function () {
     //GIVEN
     const expression = "1 2 +";
 
@@ -17,7 +17,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Simple subtraction", function () {
+  it("Simple subtraction:  1 2 - = -1", function () {
     //GIVEN
     const expression = "1 2 -";
 
@@ -29,7 +29,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Simple multiplication", function () {
+  it("Simple multiplication:  3 5 * = 15", function () {
     //GIVEN
     const expression = "3 5 *";
 
@@ -41,7 +41,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Simple division", function () {
+  it("Simple division: 10 5 / = 2", function () {
     //GIVEN
     const expression = "10 5 /";
 
@@ -53,7 +53,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("multiplication with negative number", function () {
+  it("multiplication with negative number: 10 5 NEGATE * = ", function () {
     //GIVEN
     const expression = "10 5 NEGATE *";
 
@@ -83,8 +83,7 @@ describe("Calculate / Main test", function () {
 
     //WHEN
     const actual = resolveReversePolishExpression(expression);
-    console.log(actual);
-    
+
     //THEN
     const expected = 20;
 
@@ -96,8 +95,7 @@ describe("Calculate / Main test", function () {
 
     //WHEN
     const actual = resolveReversePolishExpression(expression);
-    console.log(actual);
-    
+
     //THEN
     const expected = 155;
 
@@ -109,8 +107,7 @@ describe("Calculate / Main test", function () {
 
     //WHEN
     const actual = resolveReversePolishExpression(expression);
-    console.log(actual);
-    
+
     //THEN
     const expected = 155;
 
@@ -122,8 +119,7 @@ describe("Calculate / Main test", function () {
 
     //WHEN
     const actual = resolveReversePolishExpression(expression);
-    console.log(actual);
-    
+
     //THEN
     const expected = 55;
 
@@ -135,8 +131,7 @@ describe("Calculate / Main test", function () {
 
     //WHEN
     const actual = resolveReversePolishExpression(expression);
-    console.log(actual);
-    
+
     //THEN
     const expected = 55;
 
@@ -148,10 +143,21 @@ describe("Calculate / Main test", function () {
 
     //WHEN
     const actual = resolveReversePolishExpression(expression);
-    console.log(actual);
-    
+
     //THEN
     const expected = -55;
+
+    expect(actual).toEqual(expected);
+  });
+  it("Complexe with NEGATE", function () {
+    //GIVEN
+    const expression = "9 5 3 + 2 4 ^ - +";
+
+    //WHEN
+    const actual = resolveReversePolishExpression(expression);
+
+    //THEN
+    const expected = 1;
 
     expect(actual).toEqual(expected);
   });
@@ -195,7 +201,7 @@ describe("utils", function () {
     const actual = calculate(number1, number2, operator);
 
     //THEN
-    const expected = null;
+    const expected = "Cet opérateur n'existe pas";
 
     expect(actual).toEqual(expected);
   });
@@ -217,8 +223,6 @@ describe("utils", function () {
 
     //WHEN
     const actual = parseExpression(expression);
-    console.log(actual);
-    
 
     //THEN
     const expected = [1, "+", -4, "-", -6, "+"];
