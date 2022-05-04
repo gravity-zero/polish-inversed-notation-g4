@@ -1,6 +1,4 @@
 import { isNumber } from "lodash";
-import { parse } from "path";
-import { createTypeOperatorNode } from "typescript";
 
 type Operator = "*" | "/" | "+" | "-";
 const operators = ["*", "/", "+", "-", "NEGATE"];
@@ -31,7 +29,7 @@ export function calculate(
   number1: number,
   number2: number,
   operator: string
-): number {
+): number | null {
   switch (operator) {
     case "+":
       return number1 + number2;
@@ -42,7 +40,7 @@ export function calculate(
     case "*":
       return number1 * number2;
     default:
-      return 0;
+      return null;
   }
 }
 
@@ -90,10 +88,14 @@ function recursiveCalcul(formatedExp: (number | string)[] ): number | null {
     if (isNumber(number1) && isNumber(number2) && typeof operator === "string") {
       let result = calculate(number1, number2, operator);
   
-      array.splice(firstOperatorIndex - 2, 2)
-      array.splice(firstOperatorIndex - 2, 1, result)
+      if(isNumber(result)) {
+        array.splice(firstOperatorIndex - 2, 2)
+        array.splice(firstOperatorIndex - 2, 1, result)
+        return recursiveCalcul(array)
+      } 
+      
+      return null
 
-      return recursiveCalcul(array)
     } else {
       return null
     }
