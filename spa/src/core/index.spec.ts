@@ -53,7 +53,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("multiplication with negative number: 10 5 NEGATE * = ", function () {
+  it("multiplication with negative number: 10 5 NEGATE * = 50", function () {
     //GIVEN
     const expression = "10 5 NEGATE *";
 
@@ -65,7 +65,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe addition", function () {
+  it("Complexe addition: 10 5 + 5 + = 20", function () {
     //GIVEN
     const expression = "10 5 + 5 +";
 
@@ -77,7 +77,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe addition", function () {
+  it("Complexe addition: 5 10 5 + + = 20", function () {
     //GIVEN
     const expression = "5 10 5 + +";
 
@@ -89,7 +89,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe multiplication and addition", function () {
+  it("Complexe multiplication and addition: 15 10 * 5 + = 155", function () {
     //GIVEN
     const expression = "15 10 * 5 +";
 
@@ -101,7 +101,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe multiplication and addition", function () {
+  it("Complexe multiplication and addition: 5 10 15 * + = 155", function () {
     //GIVEN
     const expression = "5 10 15 * +";
 
@@ -113,7 +113,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe multiplication and division", function () {
+  it("Complexe multiplication and division: 0 2 / 11 * = 55", function () {
     //GIVEN
     const expression = "10 2 / 11 *";
 
@@ -125,7 +125,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe multiplication and division", function () {
+  it("Complexe multiplication and division: 11 10 2 / * = 55", function () {
     //GIVEN
     const expression = "11 10 2 / *";
 
@@ -137,7 +137,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe with NEGATE", function () {
+  it("Complexe with NEGATE: 11 10 NEGATE 2 / * = -55", function () {
     //GIVEN
     const expression = "11 10 NEGATE 2 / *";
 
@@ -149,7 +149,7 @@ describe("Calculate / Main test", function () {
 
     expect(actual).toEqual(expected);
   });
-  it("Complexe with NEGATE", function () {
+  it("Complexe with power: 9 5 3 + 2 4 ^ - + = 1", function () {
     //GIVEN
     const expression = "9 5 3 + 2 4 ^ - +";
 
