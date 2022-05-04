@@ -1,6 +1,5 @@
 import { isNumber } from "lodash";
 import { parse } from "path";
-import { sortAndDeduplicateDiagnostics } from "typescript";
 
 type Operator = "*" | "/" | "+" | "-";
 const operators = ["*", "/", "+", "-", "NEGATE"];
