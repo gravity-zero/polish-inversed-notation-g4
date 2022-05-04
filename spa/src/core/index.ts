@@ -93,14 +93,11 @@ function recursiveCalcul(formatedExp: (number | string)[] ): number | null {
       array.splice(firstOperatorIndex - 2, 2)
       array.splice(firstOperatorIndex - 2, 1, result)
 
-      recursiveCalcul(array)
+      return recursiveCalcul(array)
     } else {
       return null
     }
-
-
   } else {
     return isNumber(array[0]) ? array[0] : null
   }
-  
 }
