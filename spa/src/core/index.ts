@@ -59,7 +59,7 @@ export function parseExpression(expression: string): (number | string)[] {
 export function calculate(
   number1: number,
   number2: number,
-  operator: string
+  operator: Operator | string
 ): number | Error {
   switch (operator) {
     case "+":
