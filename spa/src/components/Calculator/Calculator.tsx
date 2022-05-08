@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button } from "../Button/Button";
 import * as core from "../../core/index";
 import './Calculator.css'
@@ -16,12 +16,15 @@ export const NPICalculator: React.FunctionComponent<Props> = () => {
   const ResetMainInput = () => setInputValue("");
   const CallNPIResult = () => {
     const result = core.default(inputValue);
+    
     if (result.status === "success") setInputValue((result.content).toString());
     else alert(result.content);
   };
 
   return (
     <div className="calculatorContainer">
+      <h1>Calculatrice Polonaise inversée</h1>
+      <br />
       <input className="inputCalculator" type="text" id="mainInput" value={inputValue}></input>
       <div>
         <Button className="button functionalBtn" label="C" value="" handleClick={RemoveLastValueToMainInput} />

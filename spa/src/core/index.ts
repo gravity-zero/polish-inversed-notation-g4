@@ -125,6 +125,7 @@ function recursiveCalcul(formatedExp: (number | string)[]): number | Error {
       isNumber(number2) &&
       typeof operator === "string"
     ) {
+      console.log(operator);
       let result = calculate(number1, number2, operator);
 
       if (isNumber(result)) {
