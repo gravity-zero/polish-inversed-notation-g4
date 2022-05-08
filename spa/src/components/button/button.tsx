@@ -1,12 +1,13 @@
 import React from "react";
 
 
-interface Buttons { 
+interface ButtonProps {
+  className?: string
   label: string,
   value?: string,
-  onclick: (e: any) => void
- }
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void,
+}
 
-export const Button: React.FunctionComponent<Buttons> = ({label, value, onclick}) => {
-  return <button type="button" onClick={onclick} className="" value={value}>{label}</button>;
+export const Button: React.FunctionComponent<ButtonProps> = ({ className, label, value, handleClick }) => {
+  return <button type="button" className={className} onClick={handleClick} value={value}>{label}</button>;
 };
